@@ -32,9 +32,6 @@ all: $(OBJ)
 	ranlib $(NAME)
 clean:
 	$(RM) $(OBJ)
-	$(RM) *~
-	$(RM) \#*\#
-        $(RM) a.out
 
 fclean: clean
 	$(RM) $(NAME)
