@@ -1,0 +1,1 @@
+echo "cc main.c -W -Wall -ansi -pedantic -L. -lmy_printf_`uname -m`-`uname -s`"
