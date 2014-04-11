@@ -32,6 +32,5 @@ int	main()
   str2[6] = '\0';
   taille = my_printf("a : %.6d c : %.4u str : %.3s c : %1 %%  %.6x %.5S %s %.3s %S %.2S %.9b\n%", a, c , str, c, str2, 0 , 0, str2, str2, c);
   my_printf(NULL);
-/*  printf(NULL);*/
   return (0);
 }
