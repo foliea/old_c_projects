@@ -1,0 +1,401 @@
+/*
+** ia.c for ia in /u/all/bienve_e/public/zappy/2_antoine
+** 
+** Made by antoine goueslard
+** Login   <gouesl_a@epitech.net>
+** 
+** Started on  Sat Jun 19 06:15:59 2010 antoine goueslard
+** Last update Sun Jun 20 18:25:12 2010 antoine goueslard
+*/
+
+#include <stdlib.h>
+#include <string.h>
+#include "client.h"
+
+extern t_play player;
+
+char	**new_tab(t_act *commands)
+{
+  t_act	*begin;
+  char	**to_send;
+
+  begin = commands;
+  while (begin != 0)
+    {
+      if (begin->fnbr == 7|| begin->fnbr == 8
+	  || begin->fnbr == 9)
+	return (NULL);
+      begin = begin->next;
+    }
+  to_send = calloc(11, sizeof(char *));
+  if (to_send == 0)
+    exit(EXIT_FAILURE);
+  return (to_send);
+}
+
+char	**docan(int can, char **to_send, char **tab_do)
+{
+  int	i;
+
+  i = 0;
+  while (i < 10 - can)
+    {
+      to_send[i] = tab_do[i];
+      tab_do[i] = tab_do[10 - can + i];
+      i++;
+    }
+  return (to_send);
+}
+
+int	calc_avance(int pos)
+{
+  if (pos == 0)
+    return (2);
+  else if (pos <= 3)
+    return (pos + 4);
+  else if (pos <= 8)
+    return (pos + 6);
+  else if (pos <= 15)
+    return (pos + 8);
+  else if (pos <= 24)
+    return (pos + 10);
+  return (0);
+}
+
+char	**caline(char **to_send, int can, int *linv)
+{
+  int	i;
+
+  i = 0;
+  if (player.inv.l < 2)
+    {   
+      if (10 - can >= 2)
+	if (player.map[player.pos].l > 0)
+	  while ((i + 1) < 9 - can)
+	    {
+	      to_send[i] = strdup("prend linemate\n");
+	      *linv -= 1;
+	      i++;
+	    }
+      to_send[i] = strdup("avance\n");
+      *linv -= 1;
+      player.pos = calc_avance(player.pos);
+    }
+  return (to_send);
+}
+
+char	**cadera(char **to_send, int can, int *linv)
+{
+  int	i;
+
+  i = 0;
+  if (player.inv.d < 2)
+    {   
+      if (10 - can >= 2)
+	if (player.map[player.pos].d > 0)
+	  while ((i + 1) < 9 - can)
+	    {
+	      to_send[i] = strdup("prend deraumere\n");
+	      *linv -= 1;
+	      i++;
+	    }
+      to_send[i] = strdup("avance\n");
+      *linv -= 1;
+      player.pos = calc_avance(player.pos);
+    }
+  return (to_send);
+}
+
+char	**casibu(char **to_send, int can, int *linv)
+{
+  int	i;
+
+  i = 0;
+  if (player.inv.s < 3)
+    {   
+      if (10 - can >= 2)
+	if (player.map[player.pos].s > 0)
+	  while ((i + 1) < 9 - can)
+	    {
+	      to_send[i] = strdup("prend sibur\n");
+	      *linv -= 1;
+	      i++;
+	    }
+      to_send[i] = strdup("avance\n");
+      *linv -= 1;
+      player.pos = calc_avance(player.pos);
+    }
+  return (to_send);
+}
+
+
+char	**caphir(char **to_send, int can, int *linv)
+{
+  int	i;
+
+  i = 0;
+  if (player.inv.p < 2)
+    {   
+      if (10 - can >= 2)
+	if (player.map[player.pos].p > 0)
+	  while ((i + 1) < 9 - can)
+	    {
+	      to_send[i] = strdup("prend phiras\n");
+	      *linv -= 1;
+	      i++;
+	    }
+      to_send[i] = strdup("avance\n");
+      *linv -= 1;
+      player.pos = calc_avance(player.pos);
+    }
+  return (to_send);
+}
+
+
+char	**catch_pierre(char **to_send, int can, int *linv)
+{
+  if (player.inv.l < 2)
+    return (caline(to_send, can, linv));
+  if (player.niveau >= 2 && player.inv.d < 2)
+    return (cadera(to_send, can, linv));
+  if (player.niveau >= 2 && player.inv.s < 3)
+    return (casibu(to_send, can, linv));
+  if (player.niveau >= 3 && player.inv.p < 3)
+    return (caphir(to_send, can, linv));
+  printf("*****\n******\n*****\n LEEEEVEEELLL 4 ***\n***\n");
+  printf("*****\n******\n*****\n gg ***\n***\n");
+  sleep(1);
+  return (NULL);
+}
+
+char	**greed(char **to_send, int can, int *linv)
+{
+  int	i;
+  int	l;
+  
+  i = 0;
+  if (player.inv.life >= 20
+      && is_enough() == -1)
+    return (catch_pierre(to_send, can, linv));
+  if (10 - can >= 2)
+    if ((l = player.map[player.pos].life) > 0)
+      while ((i + 1) < 9 - can && i < l)
+	{
+	  to_send[i] = strdup("prend nourriture\n");
+	  *linv -= 1;
+	  i++;
+	}
+  to_send[i] = strdup("avance\n");
+  *linv -= 1;
+  player.pos = calc_avance(player.pos);
+  if (player.inv.life <= 5)
+    {
+      to_send[i] = strdup("avance\n");
+      to_send[i + 1] = strdup("droite\n");
+      to_send[i + 2] = strdup("avance\n");
+      *linv -= 20;
+    }
+  return (to_send);
+}
+
+char	**new_see(int can, int *linv, t_act *commands)
+{
+  char	**ns;
+
+  if (10 - can >= 2)
+    {
+      ns = new_tab(commands);
+      if (ns == 0)
+	return (NULL);
+      ns[0] = strdup("voir\n");
+      ns[1] = strdup("inv\n");
+      *linv = 20;
+      player.pos = 0;
+      player.dir = -1;
+      return (ns);
+    }
+  return (NULL);
+}
+
+int	is_enough(void)
+{
+  if (player.niveau == 1 && player.inv.l > 0)
+    return (0);
+  if (player.niveau == 2 && player.inv.l > 0 &&
+      player.inv.d > 0 && player.inv.s > 0)
+    return (0);
+  if (player.niveau == 3 && player.inv.l > 1 &&
+      player.inv.s > 0 && player.inv.p > 1)
+    return (0);
+  return (-1);
+}
+
+char	**sendl1(int can, char **to_send, int *linv, t_act *commands)
+{
+ if (10 - can >= 2)
+    {
+      if (player.map[player.pos].d == 0 && player.map[player.pos].s == 0 &&
+	  player.map[player.pos].m == 0 && player.map[player.pos].p == 0 &&
+	  player.map[player.pos].t == 0)
+	{
+	  if (player.map[player.pos].l == 1)
+	    to_send[0] = strdup("inc\n");
+	  else
+	    {
+	      to_send[0] = strdup("pose linemate\n");
+	      to_send[1] = strdup("inc\n");
+	    }
+	}
+      else
+	{
+	  to_send[0] = strdup("avance\n");
+	  *linv -= 1;
+	  player.pos = calc_avance(player.pos);
+	}
+    }
+ return (to_send);
+}
+
+char	**sendl2(int can, char **to_send, int *linv, t_act *commands)
+{
+  if (9 - can >= 4)
+    {
+      if (player.map[player.pos].l == 0 &&
+	  player.map[player.pos].d == 0 && player.map[player.pos].s == 0 &&
+	  player.map[player.pos].m == 0 && player.map[player.pos].p == 0 &&
+	  player.map[player.pos].t == 0 && player.map[player.pos].joueurs == 2)
+	{
+	  to_send[0] = strdup("pose deraumere\n");
+	  to_send[1] = strdup("pose linemate\n");
+	  to_send[2] = strdup("pose sibur\n");
+	  to_send[3] = strdup("inc\n");
+	  *linv -= 4;
+	}
+      else if (player.map[player.pos].l == 1 &&
+	       player.map[player.pos].d == 1 && player.map[player.pos].s == 1 &&
+	       player.map[player.pos].m == 0 && player.map[player.pos].p == 0 &&
+	       player.map[player.pos].t == 0 && player.map[player.pos].joueurs == 2)
+	{
+	  to_send[0] = strdup("inc\n");
+	  *linv -= 1;
+	}
+      else
+	{	
+	  to_send[0] = strdup("bro\n");
+	  *linv = 0;
+	}
+    }
+  return (to_send);
+}
+
+char	**sendl3(int can, char **to_send, int *linv, t_act *commands)
+{
+  if (9 - can >= 6)
+    {
+      if (player.map[player.pos].l == 0 &&
+	  player.map[player.pos].d == 0 && player.map[player.pos].s == 0 &&
+	  player.map[player.pos].m == 0 && player.map[player.pos].p == 0 &&
+	  player.map[player.pos].t == 0 && player.map[player.pos].joueurs == 2)
+	{
+	  to_send[0] = strdup("pose linemate\n");
+	  to_send[1] = strdup("pose linemate\n");
+	  to_send[2] = strdup("pose sibur\n");
+       	  to_send[3] = strdup("pose phiras\n");;
+	  to_send[4] = strdup("pose phiras\n");
+	  to_send[5] = strdup("inc\n");
+	  *linv -= 6;
+	}
+      else if (player.map[player.pos].l == 2 &&
+	       player.map[player.pos].d == 0 && player.map[player.pos].s == 1 &&
+	       player.map[player.pos].m == 0 && player.map[player.pos].p == 2 &&
+	       player.map[player.pos].t == 0 && player.map[player.pos].joueurs == 2)
+	{
+	  to_send[0] = strdup("inc\n");
+	  *linv -= 1;
+	}
+      else
+	{	
+	  to_send[0] = strdup("bro\n");
+	  *linv = 0;
+	}
+    }
+  return (to_send);
+}
+
+char	**send_elev(int can, char **to_send, int *linv, t_act *commands)
+{
+  if (player.niveau == 1)
+    return (sendl1(can, to_send, linv, commands));
+  if (player.niveau == 2)
+    return (sendl2(can, to_send, linv, commands));
+  if (player.niveau == 3)
+   return (sendl3(can, to_send, linv, commands));
+  return (NULL);
+}
+
+char	**find_buddy(int can, char **to_send, int *linv, t_act *commands)
+{
+  int	i;
+  int	l;
+  
+  i = 0;
+  if (player.mess.from == 0)
+    {
+      printf("*****\n******\n*****\n BOUMMBAA ***\n");
+      printf("*****\n******\n*****\n BOUMMBAA ***\n");
+      printf("*****\n******\n*****\n BOUMMBAA ***\n");
+      printf("*****\n******\n*****\n BOUMMBAA ***\n");
+      to_send[0] = "voir\n";
+      to_send[1] = "inc\n";
+      player.mess.from = -1;
+      return (to_send);
+    }
+  while ((i + 1) < 9 - can && abs(player.mess.from - player.mess.dir > 1))
+    {
+      to_send[i] = strdup("gauche\n");
+      player.mess.dir = (player.mess.dir + 2) % 8;
+      *linv -= 1;
+      i++;
+    }
+  to_send[i] = strdup("avance\n");
+  *linv = 0;
+  player.mess.from = -1;
+  player.pos = calc_avance(player.pos);
+  return (to_send);
+}
+
+char	**find_bdir(int can, char **to_send, int *linv, t_act *commands)
+{
+  if (player.mess.from >= 0 && player.inv.life >= 10)
+    {
+      printf("*****\n******\n*****\n BUDDY ELEVATING ***\n");
+      return (find_buddy(can, to_send, linv, commands));
+    }
+  else if (is_enough() == 0 && player.inv.life >= 30)
+    {
+      printf("*****\n******\n*****\n ELEVATION READY ***\n");
+      return (send_elev(can, to_send, linv, commands));
+    }
+  return (greed(to_send, can, linv));
+}
+
+char	**new_dir(int can, t_act *commands, int *linv)
+{
+  char	**to_send;
+
+  if ((to_send = new_tab(commands)) == 0)
+    return (NULL);
+  to_send = find_bdir(can, to_send, linv, commands);
+  return (to_send);
+}
+
+char **to_do(int can, t_act *commands)
+{
+  char		**to_send;
+    static int	linv = -1;
+  
+  if (linv <= 0 || player.pos > (player.niveau + 1) * (player.niveau + 1) - 1)
+    return (new_see(can, &linv, commands));
+  else if (player.dir == -1)
+    return (new_dir(can, commands, &linv));
+}

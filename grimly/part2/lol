@@ -1,0 +1,16 @@
+Makefile
+a.out
+do_lab.c
+do_options.c
+gen.h
+lib
+lol
+main_gen.c
+map.map
+my_put_error.c
+my_put_nbr.c
+option1.c
+place_points.c
+random_points.c
+str_to_wordtab.c
+xmalloc.c
