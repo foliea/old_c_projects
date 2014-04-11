@@ -8,10 +8,10 @@
 ** Last update Sat Sep 12 17:37:45 2009 adrien folie
 */
 
-#include "my.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "my.h"
 
 int	main()
 {
