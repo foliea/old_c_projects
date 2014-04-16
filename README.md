@@ -88,8 +88,11 @@ series of operations allowing to sort the list. Operations are displayed separat
 space, no space at the start or the end, and with a newline at the end. The goal is to
 sort the list with the fewest operations possible.
 
-  `$ ./push_swap 2 1 3 6 5 8`
-
+  ```
+  $ ./push_swap 2 1 3 6 5 8
+  sa pb pb pb sa pa pa pa
+  ```
+  
 ## sudoki-bi
 
 A sudoku solver in C.
