@@ -50,7 +50,7 @@ My own implementation of the C standard library.
 
 ## my_ls
 
-My own ls.
+My own system function ls [-lRdrt] [FILE]
 
 http://en.wikipedia.org/wiki/Ls
 
