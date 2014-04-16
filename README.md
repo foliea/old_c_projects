@@ -58,6 +58,10 @@ http://en.wikipedia.org/wiki/Ls
 
 My own implementation of the printf function from the C library.
 
+  ```c
+  int printf(const char * restrict format, ...);
+  ```
+  
 ## my_select
 ## mysh
 
