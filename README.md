@@ -5,7 +5,8 @@ Projects I did a few years ago (between 2009 and 2010) when I was a student.
 Using C standard library was forbidden for some project so I reinvented the wheel a few times.
 
 I used to work on FreeBSD when I did this projects. Some are also working
-under other Linux/Unix environments, but some just don't. 
+under other Linux/Unix environments,
+but some just don't. 
 
 ## bsq
 
