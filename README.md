@@ -24,6 +24,7 @@ This projects are working only under a Linux or Unix environment.
 ### ntn
 ### philosophes
 
+A solution to the dining philosophers problem.
 http://en.wikipedia.org/wiki/Dining_philosophers_problem
 
   `$ ./philosophes`
