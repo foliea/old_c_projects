@@ -1,14 +1,22 @@
 # Old C Projects
 
 Projects I did a few years ago (between 2009 and 2010) when I was a student.
-For each project, using c standard library was forbidden.
-This projects are working only under a Linux or Unix environment.
+
+Using C standard library was forbidden for some project so I reinvented the wheel a few times.
+
+I used to develop on FreeBsd when I did this projects. Some are also working
+under Linux/Unix environment, but others won't work. 
 
 ### bsq
 ### get_next_line
 ### grimly
 ### lemipc
 ### malloc
+
+My own malloc implementation
+
+http://www.freebsd.org/cgi/man.cgi?query=malloc&sektion=9
+
 ### minitalk
 ### mud
 ### my_ftp
