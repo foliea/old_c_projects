@@ -64,6 +64,11 @@ My own implementation of the printf function.
 My own shell (handle pipes, redirections and others cool stuff).
 
 ## ntn
+
+Display a number in french.
+
+  `$ ./ntn 42`
+
 ## philosophes
 
 A solution to the dining philosophers problem.
