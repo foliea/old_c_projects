@@ -26,7 +26,7 @@ This projects are working only under a Linux or Unix environment.
 # push_swap
 # sudoki-bi
 
-A soduku solver in C.
+A sudoku solver in C.
 Check `test.txt` to see a map file example.
 You can chain one or many maps in the same file.
 
