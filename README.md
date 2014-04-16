@@ -61,7 +61,11 @@ My own implementation of the printf function.
 ## my_select
 ## mysh
 
-My own shell (handle pipes, redirections and others cool stuff).
+My own unix shell.
+
+This project handle the ’;’, the pipes ’|’ and the four redirections ’>’, ’<’, ’»’ and ’«’.
+
+  `$ ./mysh`
 
 ## ntn
 
