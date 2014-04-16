@@ -79,6 +79,19 @@ My own implementation of the printf function from the C library.
   ```
   
 ## my_select
+
+A termcaps item selector. Takes the parameters, convert it to a selectable list.
+
+  ```
+  $ ./my_select "lol" "test "etc"
+  lol
+  test
+  etc
+  ```
+  
+SPACE: Select an item.
+ENTER: Display selected items on standard ouput.
+
 ## mysh
 
 My own unix shell.
