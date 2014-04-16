@@ -67,8 +67,11 @@ My own shell (handle pipes, redirections and others cool stuff).
 
 Display a number in french.
 
-  `$ ./ntn 42`
-
+  ```
+  $ ./ntn 42
+  quarante-deux
+  ```
+  
 ## philosophes
 
 A solution to the dining philosophers problem.
