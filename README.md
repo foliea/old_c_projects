@@ -16,7 +16,7 @@ This project project is a function that returns a line read from a ﬁle
 descriptor.
   
   ```c
-  char *get_next_line(const int fd);`
+  char *get_next_line(const int fd);
   ```
   
 ## grimly
