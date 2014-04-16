@@ -29,7 +29,7 @@ descriptor.
 
 My own malloc implementation
 
-http://www.freebsd.org/cgi/man.cgi?query=malloc&sektion=9
+[man malloc](http://www.freebsd.org/cgi/man.cgi?query=malloc&sektion=9)
 
 ## minitalk
 
@@ -68,7 +68,7 @@ My own implementation of the C standard library.
 
 My own system function ls [-lRdrt] [FILE]
 
-http://en.wikipedia.org/wiki/Ls
+[man ls](http://www.freebsd.org/cgi/man.cgi?query=ls&apropos=0&sektion=1&manpath=Red+Hat+Linux%2Fi386+9&format=html)
 
 ## my_printf
 
@@ -78,6 +78,8 @@ My own implementation of the printf function from the C library.
   int printf(const char * restrict format, ...);
   ```
   
+[man printf](http://www.freebsd.org/cgi/man.cgi?query=printf&sektion=3)
+
 ## my_select
 
 A termcaps item selector. It takes the parameters and convert them into a selectable list.
