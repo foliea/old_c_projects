@@ -113,11 +113,11 @@ Display a number in french.
   
 ## philosophes
 
-A solution to the dining philosophers problem.
+A solution to the [dining philosophers](http://en.wikipedia.org/wiki/Dining_philosophers_problem) problem.
 
   `$ ./philosophes`
 
-http://en.wikipedia.org/wiki/Dining_philosophers_problem
+
 
 ## push_swap
 
