@@ -80,7 +80,7 @@ My own implementation of the printf function from the C library.
   
 ## my_select
 
-A termcaps item selector. Takes the parameters, convert it to a selectable list.
+A termcaps item selector. It takes the parameters and convert them into a selectable list.
 
   ```
   $ ./my_select "lol" "test "etc"
