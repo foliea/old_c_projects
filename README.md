@@ -89,8 +89,8 @@ A termcaps item selector. It takes the parameters and convert them into a select
   etc
   ```
   
-SPACE: Select an item.
-ENTER: Display selected items on standard ouput.
+`SPACE`: Select an item.
+`ENTER`: Display selected items on standard ouput.
 
 ## mysh
 
