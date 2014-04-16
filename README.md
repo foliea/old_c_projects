@@ -56,7 +56,7 @@ http://en.wikipedia.org/wiki/Ls
 
 ## my_printf
 
-My own implementation of the printf function.
+My own implementation of the printf function from the C library.
 
 ## my_select
 ## mysh
