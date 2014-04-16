@@ -8,9 +8,18 @@ I used to develop on FreeBsd when I did this projects. Some are also working
 under Linux/Unix environment, but others won't work. 
 
 ## bsq
+
+
 ## get_next_line
+
+
+
 ## grimly
+
+
 ## lemipc
+
+
 ## malloc
 
 My own malloc implementation
@@ -18,16 +27,38 @@ My own malloc implementation
 http://www.freebsd.org/cgi/man.cgi?query=malloc&sektion=9
 
 ## minitalk
+
+
 ## mud
+
+A simple multi-user dungeon server.
+
 ## my_ftp
+
+A simple ftp server with a command-line client
+
 ## my_irc
+
+A simple irc server with a gtk client.
+
 ## my_libc
+
+My own implementation of the C standard library.
+
 ## my_ls
+
+My own ls.
+
+http://en.wikipedia.org/wiki/Ls
+
 ## my_printf
+
+My own implementation of the printf function.
+
 ## my_select
 ## mysh
 
-
+My own shell (handle pipes, redirections and others cool stuff).
 
 ## ntn
 ## philosophes
