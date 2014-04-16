@@ -85,7 +85,7 @@ A termcaps item selector. It takes the parameters and convert them into a select
   ```
   $ ./my_select "lol" "test "etc"
   lol
-  <u>test</u>
+  test
   etc
   ```
   
