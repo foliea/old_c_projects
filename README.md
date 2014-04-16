@@ -37,6 +37,17 @@ The communication between the client and the server only uses signals.
 The server is able to handle various clients following each others.
 Only allowed to use the signals SIGUSR1 and SIGUSR2.
 
+  ```
+  $ ./server
+  PID=7845
+  ```
+  
+  ```
+  $ ./client 7845 "This is a message"
+  ```
+  
+The server will then display "This is a message".
+
 ## mud
 
 A simple multi-user dungeon server.
