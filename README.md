@@ -95,7 +95,7 @@ sort the list with the fewest operations possible.
   
 ## sudoki-bi
 
-A sudoku solver in C.
+A sudoku solver.
 Check `test.txt` to see a map file example.
 You can chain one or many maps in the same file.
 
