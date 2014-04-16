@@ -73,6 +73,15 @@ A solution to the dining philosophers problem.
 http://en.wikipedia.org/wiki/Dining_philosophers_problem
 
 ## push_swap
+
+This program take the l_a list as parameter, as a list of parameters
+(No doubles, all numbers are valid and ﬁt in an integer). This program display the
+series of operations allowing to sort the list. Operations are displayed separated by a
+space, no space at the start or the end, and with a newline at the end. The goal is to
+sort the list with the fewest operations possible.
+
+  `$ ./push_swap 2 1 3 6 5 8`
+
 ## sudoki-bi
 
 A sudoku solver in C.
