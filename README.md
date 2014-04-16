@@ -14,9 +14,11 @@ under Linux/Unix environment, but others won't work.
 
 This project project is a function that returns a line read from a ﬁle
 descriptor.
-
-  `char *get_next_line(const int fd);`
-
+  
+  ```c
+  char *get_next_line(const int fd);`
+  ```
+  
 ## grimly
 
 
