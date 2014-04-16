@@ -25,9 +25,10 @@ This projects are working only under a Linux or Unix environment.
 ### philosophes
 
 A solution to the dining philosophers problem.
-http://en.wikipedia.org/wiki/Dining_philosophers_problem
 
   `$ ./philosophes`
+
+http://en.wikipedia.org/wiki/Dining_philosophers_problem
 
 ### push_swap
 ### sudoki-bi
