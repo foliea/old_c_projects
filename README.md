@@ -36,7 +36,7 @@ descriptor.
 
 ## malloc
 
-My own malloc implementation
+My own malloc implementation.
 
 [man malloc](http://www.freebsd.org/cgi/man.cgi?query=malloc&sektion=9)
 
