@@ -9,6 +9,15 @@ under other Linux/Unix environments, but unfortunatly some don't.
 
 ## bsq
 
+Find the biggest square in a map.
+
+  `./bsq map_file`
+  
+Check `test.txt` to see a map file example.
+
+You can also activate the color mode :
+
+  `./bsq -colors map_file`
 
 ## get_next_line
 
