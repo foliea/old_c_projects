@@ -75,7 +75,7 @@ My own system function ls [-lRdrt] [FILE]
 My own implementation of the printf function from the C library.
 
   ```c
-  int printf(const char * restrict format, ...);
+  int my_printf(const char * restrict format, ...);
   ```
   
 [man printf](http://www.freebsd.org/cgi/man.cgi?query=printf&sektion=3)
