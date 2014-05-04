@@ -21,7 +21,7 @@ You can also activate the color mode :
 
 ## get_next_line
 
-This project project is a function that returns a line read from a ﬁle
+This project is a function that returns a line read from a ﬁle
 descriptor.
   
   ```c
