@@ -130,8 +130,8 @@ A solution to the [dining philosophers](http://en.wikipedia.org/wiki/Dining_phil
 
 ## push_swap
 
-This program take the l_a list as parameter, as a list of parameters
-(No doubles, all numbers are valid and ﬁt in an integer). This program display the
+This program take the parameters as a list of parameters
+(no doubles, all numbers are valid and ﬁt in an integer). This program display the
 series of operations allowing to sort the list. Operations are displayed separated by a
 space, no space at the start or the end, and with a newline at the end. The goal is to
 sort the list with the fewest operations possible.
