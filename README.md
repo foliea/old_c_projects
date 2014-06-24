@@ -81,7 +81,7 @@ My own system function ls [-lRdrt] [FILE]
 
 ## my_printf
 
-My own implementation of the printf function from the C library.
+My own implementation of the printf function from the C standard library.
 
   ```c
   int my_printf(const char * restrict format, ...);
